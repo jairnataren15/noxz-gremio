@@ -1,34 +1,3 @@
-import { createClient } from '@supabase/supabase-js';
-
-// Sustituye con tu URL y API Key de Supabase
-const supabase = createClient('https://implrjltvhfwopuwpdrt.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltcGxyamx0dmhmd29wdXdwZHJ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk2ODY5NjEsImV4cCI6MjA1NTI2Mjk2MX0.kmwVJeGPlba4-uybP79ghJf2YTXImY0DA9j6YWZw7D0');
-
-// Ejemplo para obtener datos desde Supabase
-async function getPlayers() {
-    const { data, error } = await supabase
-        .from('players') // Nombre de la tabla en Supabase
-        .select('*');
-    
-    if (error) {
-        console.error('Error:', error);
-    } else {
-        console.log('Jugadores:', data);
-    }
-}
-
-getPlayers();
-
-async function signInWithGoogle() {
-    const { user, session, error } = await supabase.auth.signInWithOAuth({
-        provider: 'google',
-    });
-    
-    if (error) {
-        console.error('Error de autenticación:', error);
-    } else {
-        console.log('Usuario autenticado:', user);
-    }
-}
 
 document.addEventListener("DOMContentLoaded", () => {
     makeTableDraggable("dpsBody");
