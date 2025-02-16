@@ -1,5 +1,4 @@
 
-
 document.addEventListener("DOMContentLoaded", () => {
     makeTableDraggable("dpsBody");
     makeTableDraggable("healerBody");
